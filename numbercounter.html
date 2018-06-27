@@ -3,6 +3,7 @@
   <head>
 
     <script>
+
       function addition(){
         var ourAnswer = document.getElementById("answer").value;
         isNaN(ourAnswer);
@@ -16,6 +17,16 @@
           }
         }
       }
+
+      function reset(){
+        document.getElementById("answer").value = "";
+        document.getElementById("output").innerHTML = "";
+        numOne = Math.floor(Math.random() * 10) + 1;
+        numTwo = Math.floor(Math.random() * 10) + 1;
+        document.getElementById("demo").innerHTML = numOne + " + " + numTwo;
+        correctAnswer = numOne + numTwo;
+      }
+
     </script>
       
   </head>
@@ -25,7 +36,7 @@
     <center>
       <h1>Number Counter</h1>
 
-      <h1>
+      <h1 id="demo">
         <script type="text/javascript">
           var numOne = Math.floor(Math.random() * 10) + 1;
           var numTwo = Math.floor(Math.random() * 10) + 1;
@@ -37,6 +48,11 @@
       <p>Please enter your answer: </p>
       <input id="answer">
       <button type="button" onclick="addition()">Submit</button>
+      <button type="button" onclick="reset()">Reset Page</button>
+      <!-- 
+        We can use window.location.reload() to reset the page.
+        <input type="button" value="Reset Page" onclick="window.location.reload()"> 
+      -->
       <p id="output"></p>
       
       <!-- <script type="text/javascript">
