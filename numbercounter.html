@@ -9,7 +9,11 @@
         if (isNaN(ourAnswer)){
           document.getElementById("output").innerHTML = "Hey! " + ourAnswer + " is not a number!";
         } else {
-          document.getElementById("output").innerHTML = ourAnswer;
+          if (ourAnswer == correctAnswer){
+            document.getElementById("output").innerHTML = "Correct! " + numOne + " + " + numTwo + " = " + correctAnswer;
+          } else {
+            document.getElementById("output").innerHTML = "Incorrect! " + numOne + " + " + numTwo + " = " + correctAnswer + ", not " + ourAnswer;
+          }
         }
       }
     </script>
@@ -26,6 +30,7 @@
           var numOne = Math.floor(Math.random() * 10) + 1;
           var numTwo = Math.floor(Math.random() * 10) + 1;
           document.write(numOne + " + " + numTwo);
+          var correctAnswer = numOne + numTwo;
         </script>
       </h1>
 
@@ -34,6 +39,9 @@
       <button type="button" onclick="addition()">Submit</button>
       <p id="output"></p>
       
+      <!-- <script type="text/javascript">
+        we use "document.write(correctAnswer);" to check the code is working
+      </script> -->
 
     </center>
 
