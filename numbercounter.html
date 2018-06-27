@@ -5,7 +5,12 @@
     <script>
       function addition(){
         var ourAnswer = document.getElementById("answer").value;
-        document.getElementById("output").innerHTML = ourAnswer;
+        isNaN(ourAnswer);
+        if (isNaN(ourAnswer)){
+          document.getElementById("output").innerHTML = "Hey! " + ourAnswer + " is not a number!";
+        } else {
+          document.getElementById("output").innerHTML = ourAnswer;
+        }
       }
     </script>
       
@@ -28,6 +33,7 @@
       <input id="answer">
       <button type="button" onclick="addition()">Submit</button>
       <p id="output"></p>
+      
 
     </center>
 
